@@ -20,7 +20,6 @@ include_directories( ${Boost_INCLUDE_DIR} )
 include_directories("/usr/local/Cellar/libpqxx/6.2.4/include")
 find_package(cpprestsdk REQUIRED)
 
-
 add_executable(restserver
   main.cpp
   include/handler.h
@@ -32,21 +31,7 @@ add_executable(restserver
   src/service/todo_service.cpp
   include/service/todo_service.h)
 
-if(DBMS)
-	set(NEW_DB_SRC_DIR ${CMAKE_SOURCE_DIR}/dbms/src)
-	add_library(dbms SHARED
-		${NEW_DB_SRC_DIR}/Dbms.cpp
-			include/router.h)
-	set(Dbms_dep_lib "-lpqxx -lpq")
-	target_link_libraries(restserver dbms ${Casablanca_LIBRARIES} ${Dbms_dep_lib} ${Boost_LIBRARIES})
-else(DBMS)
-	target_link_libraries(restserver
-			${Boost_LIBRARIES}
-			${OPENSSL_LIBRARIES}
-			cpprestsdk::cpprest)
-endif(DBMS)
-
-
-
-
-
+target_link_libraries(restserver
+		${Boost_LIBRARIES}
+		${OPENSSL_LIBRARIES}
+		cpprestsdk::cpprest)
