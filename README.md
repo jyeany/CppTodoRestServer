@@ -4,13 +4,18 @@ Sample code of cpprestsdk (casablanca)
 
 This repo contains a sample of cpprestsdk server side in very simple format.
 sample handles 4 method of http request [put, get,post and delete].
-almost every function/class name is a self documentation  of it's functionality.
+Allows adding, updating, listing, and removing to do items.
 
 project structure 
 
 [main.cpp]
 [include/handler.h]
-[src/hander.cpp]
+[include/router.h]
+[include/model/todo.h]
+[include/service/todo_service.h]
+[src/model/todo.cpp]
+[src/service/todo_service.cpp]
+[src/handler.cpp]
 
 
 How to compile :
@@ -22,16 +27,8 @@ make
 run server 
 ./Build/bin/restserver
 
-[
-For mac, mac branch is recommanded.
-]
+Current setup is to build on mac. DBMS sub-project is not setup
 
-[
-
-For Windows (Visual studio solution) (checkout vs15_v140 branch )
-
-]
-##############################################
 
 {#dbms folder is a independent project right now to access database before enable to install some prerequsites}
 1)
