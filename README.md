@@ -4,14 +4,14 @@ This repo contains a sample of cpprestsdk server side for creating a todo list.
 Sample handles 4 method of http request [put, get,post and delete].
 Allows adding, updating, listing, and removing todo items.
 
-Endpoints:
+### Endpoints:  
 GET     /todo  
 POST    /todo  
 PUT     /todo  
 DELETE  /todo/{id}  
 
 
-project structure 
+### project structure: 
 
 [main.cpp]  
 [include/handler.h]  
