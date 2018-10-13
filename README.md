@@ -24,14 +24,6 @@ DELETE  /todo/{id}
 
 
 ### Build
-There are currently two hardcoded include directories specific to mac in CMakeLists.txt.
-Please update them as appropriate for your system:  
-```
-include_directories("/usr/local/Cellar/libpqxx/6.2.4/include")
-and 
-set(OPENSSL_ROOT_DIR /usr/local/Cellar/openssl/1.0.2o_2)
-```
-
 How to compile :
 
 ```

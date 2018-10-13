@@ -14,11 +14,6 @@ find_package( Boost 1.67 COMPONENTS
 		filesystem
 		thread REQUIRED )
 
-# TODO make these non-system specific
-set(OPENSSL_ROOT_DIR /usr/local/Cellar/openssl/1.0.2o_2)
-include_directories("/usr/local/Cellar/libpqxx/6.2.4/include")
-# end TODO
-
 find_package(openssl COMPONENTS crypto ssl REQUIRED)
 include_directories( ${Boost_INCLUDE_DIR} )
 find_package(cpprestsdk REQUIRED)
